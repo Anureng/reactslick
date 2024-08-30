@@ -1,25 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 function App() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear"
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container mx-auto py-8 p-10">
+        <Slider {...settings}>
+          <div className="flex items-center justify-center h-48 bg-blue-500 text-white">
+            <h3 className="text-3xl">1</h3>
+          </div>
+          <div className="flex items-center justify-center h-48 bg-green-500 text-white">
+            <h3 className="text-3xl">2</h3>
+          </div>
+          <div className="flex items-center justify-center h-48 bg-red-500 text-white">
+            <h3 className="text-3xl">3</h3>
+          </div>
+          <div className="flex items-center justify-center h-48 bg-yellow-500 text-white">
+            <h3 className="text-3xl">4</h3>
+          </div>
+          <div className="flex items-center justify-center h-48 bg-purple-500 text-white">
+            <h3 className="text-3xl">5</h3>
+          </div>
+          <div className="flex items-center justify-center h-48 bg-pink-500 text-white">
+            <h3 className="text-3xl">6</h3>
+          </div>
+        </Slider>
+      </div>
+    </>
   );
 }
 
